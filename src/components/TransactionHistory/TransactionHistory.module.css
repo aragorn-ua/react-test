@@ -1,0 +1,32 @@
+/* TransactionHistory.module.css */
+
+/* Стили для заголовка */
+table {
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+    border-collapse: collapse;
+  }
+
+  thead th {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  /* Стили для строк */
+  tbody tr:nth-child(even) {
+    background-color: lightgray;
+    color: black;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: white;
+    color: black;
+  }
+
+  tbody td {
+    padding: 10px;
+    border-bottom: 1px solid black;
+  }
