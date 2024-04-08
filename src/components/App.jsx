@@ -8,6 +8,8 @@ import Options from "./options/Options"
 import Feedback from "./feedback/Feedback";
 import Notification from "./notification/Notification"
 import LoginForm from "./LoginForm/LoginForm";
+import SearchBar from "./SearchBar/SearchBar";
+import LangSwitcher from './LangSwitcher/LangSwitcher'
 
 import { useState, useEffect  } from 'react';
 const ClickCounter = () => {
@@ -59,6 +61,8 @@ const App = () => {
   const handleLogin = (userData) => {
     console.log(userData);
  };
+ const [lang, setLang] = useState("uk");
+
   /***********************END OF MODULE 3*****/
 
  return (
@@ -82,6 +86,9 @@ const App = () => {
       <h1>Please login to your account!</h1>
       {/* Передаємо колбек як пропс форми */}
       <LoginForm onLogin={handleLogin} />
+      <SearchBar/>
+      <p>Selected language: {lang}</p>
+      <LangSwitcher value={lang} onSelect={setLang} />
     </div>
 
       <p>***************** H-W-3 **************************</p>

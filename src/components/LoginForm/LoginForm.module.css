@@ -1,0 +1,37 @@
+.loginForm {
+    max-width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    /* background: linear-gradient(45deg, rgba(255, 0, 0, 0.7), rgba(17, 0, 255, 0.37)); */
+    /* background: conic-gradient(from -45deg, red, blue); */
+    /* background-color: rgba(0, 48, 48, 0.5); Полупрозрачный фон */
+    border-radius: 10px; /* Закругленные края */
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .inputForm {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px; /* Закругленные края */
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .btnForm {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px; /* Закругленные края */
+    cursor: pointer;
+  }
+
+  .btnForm:hover {
+    background-color: #0056b3;
+  }
