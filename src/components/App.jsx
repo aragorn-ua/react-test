@@ -9,7 +9,11 @@ import Feedback from "./feedback/Feedback";
 import Notification from "./notification/Notification"
 import LoginForm from "./LoginForm/LoginForm";
 import SearchBar from "./SearchBar/SearchBar";
-import LangSwitcher from './LangSwitcher/LangSwitcher'
+import LangSwitcher from './LangSwitcher/LangSwitcher';
+import FeedbackForm from "./FeedbackForm/FeedbackForm";
+import ContactForm from "./ContactForm/ContactForm";
+import SearchBox from "./SearchBox/SearchBox";
+import ContactList from "./ContactList/ContactList";
 
 import { useState, useEffect  } from 'react';
 const ClickCounter = () => {
@@ -89,9 +93,14 @@ const App = () => {
       <SearchBar/>
       <p>Selected language: {lang}</p>
       <LangSwitcher value={lang} onSelect={setLang} />
+      <FeedbackForm />
     </div>
 
       <p>***************** H-W-3 **************************</p>
+       <h1>Phonebook</h1>
+  <ContactForm />
+  <SearchBox />
+  <ContactList />
     </>
   );
 };

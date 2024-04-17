@@ -1,0 +1,43 @@
+.form {
+    max-width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background: linear-gradient(120deg, rgba(255, 255, 0, 0.7), rgba(255, 0, 0, 0.6));
+    /* background: conic-gradient(from -45deg, red, blue); */
+    /* background-color: rgba(0, 48, 48, 0.5); Полупрозрачный фон */
+    border-radius: 10px; /* Закругленные края */
+  }
+
+  .label {
+    display: block;
+    color:sienna;
+    margin-bottom: 10px;
+  }
+  .error {
+    background-color: black;
+    color: #ff0000;
+  }
+
+  .field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px; /* Закругленные края */
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffe600;
+    color: #ff0000;
+    border: none;
+    border-radius: 5px; /* Закругленные края */
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: #ff0000;
+    color: #ffee00;
+  }
