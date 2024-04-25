@@ -11,7 +11,8 @@ import LoginForm from "./LoginForm/LoginForm";
 import SearchBar from "./SearchBar/SearchBar";
 import LangSwitcher from './LangSwitcher/LangSwitcher';
 import FeedbackForm from "./FeedbackForm/FeedbackForm";
-import ContactForm from "./ContactForm/ContactForm";
+import contacts from "../contacts.json"
+// import ContactForm from "./ContactForm/ContactForm";
 import SearchBox from "./SearchBox/SearchBox";
 import ContactList from "./ContactList/ContactList";
 
@@ -66,7 +67,15 @@ const App = () => {
     console.log(userData);
  };
  const [lang, setLang] = useState("uk");
-
+ /***************** START of 3 HW *****/
+ const [filteredContact, setFilteredContact] = useState ("");
+const handleChange = (e) => {
+  setFilteredContact(e.target.value);
+}
+const filteredList = contacts.contacts.filter((contact) =>
+  contact.name.toLowerCase().includes(filteredContact.toLowerCase()) ||
+  contact.phoneNumber.includes(filteredContact)
+);
   /***********************END OF MODULE 3*****/
 
  return (
@@ -98,9 +107,9 @@ const App = () => {
 
       <p>***************** H-W-3 **************************</p>
        <h1>Phonebook</h1>
-  <ContactForm />
-  <SearchBox />
-  <ContactList />
+  {/* <ContactForm /> */}
+  <SearchBox filteredContact = {filteredContact} handleChange={handleChange}/>
+  <ContactList contacts={filteredList} />
     </>
   );
 };

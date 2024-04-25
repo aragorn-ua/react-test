@@ -1,0 +1,21 @@
+.contacts {
+    display: inline-flex;
+}
+
+.contactsCard {
+    position: relative;
+    list-style: none;
+    border: 3px solid #000000;
+    background-color: #ffffff;
+    text-align: left;
+    margin-right: 10px;
+    border-radius: 8px;
+    padding-top: 10px;
+    width: 200px;
+}
+.contactsCard button {
+    position: absolute;
+    right: 10px;
+    bottom: 50%;
+    transform: translateY(50%);
+}
