@@ -1,10 +1,9 @@
+import css from "./SearchBox.module.css"
 const SearchBox = ({filteredContact, handleChange}) => {
 return (
-<>
-<input type="text" value={filteredContact} onChange={handleChange} />
-<p>Filter: {filteredContact}</p>
-</>
-
+<div>
+<input type="text" className={css.filtered} value={filteredContact} onChange={handleChange} />
+</div>
 )
 }
 

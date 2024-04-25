@@ -12,7 +12,7 @@ import SearchBar from "./SearchBar/SearchBar";
 import LangSwitcher from './LangSwitcher/LangSwitcher';
 import FeedbackForm from "./FeedbackForm/FeedbackForm";
 import contacts from "../contacts.json"
-// import ContactForm from "./ContactForm/ContactForm";
+import ContactForm from "./ContactForm/ContactForm";
 import SearchBox from "./SearchBox/SearchBox";
 import ContactList from "./ContactList/ContactList";
 
@@ -107,7 +107,7 @@ const filteredList = contacts.contacts.filter((contact) =>
 
       <p>***************** H-W-3 **************************</p>
        <h1>Phonebook</h1>
-  {/* <ContactForm /> */}
+  <ContactForm />
   <SearchBox filteredContact = {filteredContact} handleChange={handleChange}/>
   <ContactList contacts={filteredList} />
     </>
