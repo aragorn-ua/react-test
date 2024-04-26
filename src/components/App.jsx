@@ -11,7 +11,7 @@ import LoginForm from "./LoginForm/LoginForm";
 import SearchBar from "./SearchBar/SearchBar";
 import LangSwitcher from './LangSwitcher/LangSwitcher';
 import FeedbackForm from "./FeedbackForm/FeedbackForm";
-import contacts from "../contacts.json"
+// import contacts from "../contacts.json"
 import ContactForm from "./ContactForm/ContactForm";
 import SearchBox from "./SearchBox/SearchBox";
 import ContactList from "./ContactList/ContactList";
@@ -68,15 +68,30 @@ const App = () => {
  };
  const [lang, setLang] = useState("uk");
  /***************** START of 3 HW *****/
+ const [contacts, setContacts] = useState(JSON.parse(window.localStorage.getItem("contacts")) || [
+  { "id": "id-1", "name": "Rosie Simpson", "phoneNumber": "459-12-56" },
+  { "id": "id-2", "name": "Hermione Kline", "phoneNumber": "443-89-12" },
+  { "id": "id-3", "name": "Eden Clements", "phoneNumber": "645-17-79" },
+  { "id": "id-4", "name": "Annie Copeland", "phoneNumber": "227-91-26" }
+]);
+
  const [filteredContact, setFilteredContact] = useState ("");
 const handleChange = (e) => {
   setFilteredContact(e.target.value);
 }
-const filteredList = contacts.contacts.filter((contact) =>
+const filteredList = contacts.filter((contact) =>
   contact.name.toLowerCase().includes(filteredContact.toLowerCase()) ||
   contact.phoneNumber.includes(filteredContact)
 );
-  /***********************END OF MODULE 3*****/
+const addContact = (newContact) => {
+  const updatedContacts = [...contacts, newContact];
+  setContacts(updatedContacts);
+  window.localStorage.setItem("contacts", JSON.stringify(updatedContacts));
+};
+
+
+
+ /***********************END OF MODULE 3*****/
 
  return (
     <>
@@ -107,7 +122,7 @@ const filteredList = contacts.contacts.filter((contact) =>
 
       <p>***************** H-W-3 **************************</p>
        <h1>Phonebook</h1>
-  <ContactForm />
+  <ContactForm addContact={addContact}/>
   <SearchBox filteredContact = {filteredContact} handleChange={handleChange}/>
   <ContactList contacts={filteredList} />
     </>

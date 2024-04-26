@@ -1,5 +1,7 @@
 .contacts {
-    display: inline-flex;
+    display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ширина каждого элемента минимум 200px, но они равномерно распределяются по доступной ширине окна */
+  gap: 10px;
 }
 
 .contactsCard {
