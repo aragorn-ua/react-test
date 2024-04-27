@@ -1,12 +1,12 @@
 import { FaUser, FaPhone } from 'react-icons/fa';
 
 
-const Contact = ({name, phoneNumber}) => {
+const Contact = ({name, phoneNumber, idContact, removeContact}) => {
     return (
         <>
         <p><FaUser /> {name}</p>
         <p><FaPhone /> {phoneNumber}</p>
-        <button>Delete</button>
+        <button onClick={() => removeContact(idContact)}>Delete</button>
         </>
     )
 }

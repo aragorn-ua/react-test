@@ -75,7 +75,7 @@ const App = () => {
   { "id": "id-4", "name": "Annie Copeland", "phoneNumber": "227-91-26" }
 ]);
 
- const [filteredContact, setFilteredContact] = useState ("");
+const [filteredContact, setFilteredContact] = useState ("");
 const handleChange = (e) => {
   setFilteredContact(e.target.value);
 }
@@ -89,7 +89,11 @@ const addContact = (newContact) => {
   window.localStorage.setItem("contacts", JSON.stringify(updatedContacts));
 };
 
-
+const removeContact = (idContact) => {
+  const updatedContacts = contacts.filter(contact => contact.id !== idContact);
+  setContacts(updatedContacts);
+  window.localStorage.setItem("contacts", JSON.stringify(updatedContacts));
+}
 
  /***********************END OF MODULE 3*****/
 
@@ -122,9 +126,9 @@ const addContact = (newContact) => {
 
       <p>***************** H-W-3 **************************</p>
        <h1>Phonebook</h1>
-  <ContactForm addContact={addContact}/>
+  <ContactForm addContact={addContact} />
   <SearchBox filteredContact = {filteredContact} handleChange={handleChange}/>
-  <ContactList contacts={filteredList} />
+  <ContactList contacts={filteredList} removeContact={removeContact} />
     </>
   );
 };

@@ -1,6 +1,6 @@
 .contacts {
     display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ширина каждого элемента минимум 200px, но они равномерно распределяются по доступной ширине окна */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px;
 }
 
