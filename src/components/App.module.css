@@ -1,0 +1,14 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.phonebook {
+  display: flex;
+  flex-direction: column; /* Расположить дочерние элементы вертикально */
+  align-items: center; /* Центрировать элементы по горизонтали */
+  justify-content: center; /* Центрировать элементы по вертикали */
+  /* height: 100vh; */
+}

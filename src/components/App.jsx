@@ -15,6 +15,7 @@ import FeedbackForm from "./FeedbackForm/FeedbackForm";
 import ContactForm from "./ContactForm/ContactForm";
 import SearchBox from "./SearchBox/SearchBox";
 import ContactList from "./ContactList/ContactList";
+import css from "./App.module.css"
 
 import { useState, useEffect  } from 'react';
 const ClickCounter = () => {
@@ -68,6 +69,7 @@ const App = () => {
  };
  const [lang, setLang] = useState("uk");
  /***************** START of 3 HW *****/
+ console.log("Initial contacts:", JSON.parse(window.localStorage.getItem("contacts")));
  const [contacts, setContacts] = useState(JSON.parse(window.localStorage.getItem("contacts")) || [
   { "id": "id-1", "name": "Rosie Simpson", "phoneNumber": "459-12-56" },
   { "id": "id-2", "name": "Hermione Kline", "phoneNumber": "443-89-12" },
@@ -125,9 +127,11 @@ const removeContact = (idContact) => {
     </div>
 
       <p>***************** H-W-3 **************************</p>
+      <div className={css.phonebook}>
        <h1>Phonebook</h1>
   <ContactForm addContact={addContact} />
   <SearchBox filteredContact = {filteredContact} handleChange={handleChange}/>
+  </div>
   <ContactList contacts={filteredList} removeContact={removeContact} />
     </>
   );
